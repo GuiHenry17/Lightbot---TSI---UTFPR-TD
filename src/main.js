@@ -48,3 +48,23 @@ runWhenDomReady(function () {
     console.error("Lightbot boot failed:", e);
   });
 });
+
+var themeBackgrounds = {
+  dracula: "dracula.jpg",
+  forest: "forest.jpg",
+  synthwave: "synthwave.jpg"
+  // temas sem imagem ficam só com a cor sólida
+};
+
+function applyThemeBackground() {
+  var theme = document.documentElement.getAttribute("data-theme");
+  var file = themeBackgrounds[theme];
+  document.documentElement.style.setProperty(
+    "--lb-theme-bg",
+    file ? 'url("' + assetBaseUrl + 'img/themes/' + file + '")' : "none"
+  );
+}
+
+applyThemeBackground();
+new MutationObserver(applyThemeBackground)
+  .observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
