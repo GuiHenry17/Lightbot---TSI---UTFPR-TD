@@ -21,6 +21,55 @@ export function createMedia() {
       {webm: "media/video/medal.webm", mp4: "media/video/medal.mp4"}
     ],
     audioEnabled: false,
+    _sfxCtx: null,
+    // Short synthesized sound effects (Web Audio API), so no extra audio files are needed.
+    // Each effect is a list of notes: [frequency (Hz), start offset (s), duration (s), waveform].
+    sfx: {
+      lightOn: [[660, 0, 0.08, "square"], [990, 0.07, 0.12, "square"]],
+      lightOff: [[520, 0, 0.08, "square"], [330, 0.07, 0.12, "square"]],
+      jump: [[300, 0, 0.06, "triangle"], [450, 0.05, 0.06, "triangle"], [600, 0.1, 0.08, "triangle"]],
+      bump: [[110, 0, 0.12, "sawtooth"]],
+      levelComplete: [[523, 0, 0.12, "triangle"], [659, 0.12, 0.12, "triangle"], [784, 0.24, 0.12, "triangle"], [1047, 0.36, 0.35, "triangle"]],
+      achievement: [[880, 0, 0.1, "sine"], [1175, 0.1, 0.1, "sine"], [1760, 0.2, 0.3, "sine"]]
+    },
+    _getSfxContext: function () {
+      if (this._sfxCtx) return this._sfxCtx;
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return null;
+      this._sfxCtx = new Ctx();
+      return this._sfxCtx;
+    },
+    playSfx: function (name) {
+      // Sound effects follow the same on/off toggle as the music.
+      if (!this.audioEnabled) return;
+      var notes = this.sfx[name];
+      if (!notes) return;
+      var ctx = this._getSfxContext();
+      if (!ctx) return;
+      if (ctx.state === "suspended" && typeof ctx.resume === "function") ctx.resume();
+
+      var now = ctx.currentTime;
+      for (var i = 0; i < notes.length; i++) {
+        var freq = notes[i][0];
+        var start = now + notes[i][1];
+        var duration = notes[i][2];
+
+        var osc = ctx.createOscillator();
+        var gain = ctx.createGain();
+        osc.type = notes[i][3] || "sine";
+        osc.frequency.setValueAtTime(freq, start);
+
+        // quick attack + exponential decay to avoid clicks.
+        gain.gain.setValueAtTime(0.0001, start);
+        gain.gain.exponentialRampToValueAtTime(0.12, start + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(start);
+        osc.stop(start + duration + 0.02);
+      }
+    },
     init: function () {
       this.audioEl = document.getElementById("audioPlayer");
       this.videoEl = document.getElementById("videoPlayer");
