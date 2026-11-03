@@ -120,7 +120,8 @@ export const LIGHTBOT_TRANSLATIONS_JP = {
     "placeholder": "ここに命令をドロップ"
   },
   "program": {
-    "title": "プログラム"
+    "title": "プログラム",
+    "clearAll": "すべてクリア"
   },
   "dialogs": {
     "levelComplete": {

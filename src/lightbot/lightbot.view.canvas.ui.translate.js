@@ -2,6 +2,7 @@
 import i18next from "i18next";
 import { LIGHTBOT_TRANSLATIONS_DE } from "../locales/translations.de.js";
 import { LIGHTBOT_TRANSLATIONS_EN } from "../locales/translations.en.js";
+import { LIGHTBOT_TRANSLATIONS_ES } from "../locales/translations.es.js";
 import { LIGHTBOT_TRANSLATIONS_FR } from "../locales/translations.fr.js";
 import { LIGHTBOT_TRANSLATIONS_JP } from "../locales/translations.jp.js";
 import { LIGHTBOT_TRANSLATIONS_PT_BR } from "../locales/translations.pt.js";
@@ -12,6 +13,9 @@ var FALLBACK_LANGUAGE = "en";
 var TRANSLATION_RESOURCES = {
   en: {
     translation: LIGHTBOT_TRANSLATIONS_EN,
+  },
+  es: {
+    translation: LIGHTBOT_TRANSLATIONS_ES,
   },
   de: {
     translation: LIGHTBOT_TRANSLATIONS_DE,
