@@ -2,6 +2,7 @@
 import i18next from "i18next";
 import { LIGHTBOT_TRANSLATIONS_DE } from "../locales/translations.de.js";
 import { LIGHTBOT_TRANSLATIONS_EN } from "../locales/translations.en.js";
+import { LIGHTBOT_TRANSLATIONS_ES } from "../locales/translations.es.js";
 import { LIGHTBOT_TRANSLATIONS_FR } from "../locales/translations.fr.js";
 import { LIGHTBOT_TRANSLATIONS_JP } from "../locales/translations.jp.js";
 import { LIGHTBOT_TRANSLATIONS_PT_BR } from "../locales/translations.pt.js";
@@ -12,6 +13,9 @@ var FALLBACK_LANGUAGE = "en";
 var TRANSLATION_RESOURCES = {
   en: {
     translation: LIGHTBOT_TRANSLATIONS_EN,
+  },
+  es: {
+    translation: LIGHTBOT_TRANSLATIONS_ES,
   },
   de: {
     translation: LIGHTBOT_TRANSLATIONS_DE,
@@ -39,13 +43,38 @@ function applyTranslations() {
   });
 }
 
+// Browser language codes that don't match our resource keys directly.
+var LANGUAGE_ALIASES = {
+  pt: "pt_br",
+  "pt-br": "pt_br",
+  "pt-pt": "pt_br",
+  ja: "jp",
+};
+
 function resolveLanguage(language) {
   if (!language) return null;
   // normalize "en-US" to "en" when we only have base language keys.
-  var normalized = String(language).toLowerCase();
-  if (TRANSLATION_RESOURCES[normalized]) return normalized;
+  var normalized = String(language).toLowerCase().replace("_", "-");
+  var key = normalized.replace("-", "_");
+  if (TRANSLATION_RESOURCES[key]) return key;
+  if (LANGUAGE_ALIASES[normalized]) return LANGUAGE_ALIASES[normalized];
   var shortCode = normalized.split("-")[0];
   if (TRANSLATION_RESOURCES[shortCode]) return shortCode;
+  if (LANGUAGE_ALIASES[shortCode]) return LANGUAGE_ALIASES[shortCode];
+  return null;
+}
+
+// First visit: pick the first browser language we have a translation for.
+function detectBrowserLanguage() {
+  var candidates = [];
+  if (typeof navigator !== "undefined") {
+    if (Array.isArray(navigator.languages)) candidates = candidates.concat(navigator.languages);
+    if (navigator.language) candidates.push(navigator.language);
+  }
+  for (var i = 0; i < candidates.length; i++) {
+    var resolved = resolveLanguage(candidates[i]);
+    if (resolved) return resolved;
+  }
   return null;
 }
 
@@ -102,7 +131,7 @@ function initLanguageSelect() {
 }
 
 export function initI18n() {
-  var storedLanguage = resolveLanguage(getStoredLanguage()) || FALLBACK_LANGUAGE;
+  var storedLanguage = resolveLanguage(getStoredLanguage()) || detectBrowserLanguage() || FALLBACK_LANGUAGE;
   i18next.on("languageChanged", handleLanguageChange);
 
   return i18next

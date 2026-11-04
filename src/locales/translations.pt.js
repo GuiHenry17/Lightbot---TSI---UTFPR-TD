@@ -120,7 +120,8 @@ export const LIGHTBOT_TRANSLATIONS_PT_BR = {
     "placeholder": "Solte suas instruções aqui"
   },
   "program": {
-    "title": "Programa"
+    "title": "Programa",
+    "clearAll": "Limpar tudo"
   },
   "dialogs": {
     "levelComplete": {
