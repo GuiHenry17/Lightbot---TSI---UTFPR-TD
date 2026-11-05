@@ -50,25 +50,3 @@ runWhenDomReady(function () {
   });
 });
 
-var themeBackgrounds = {
-  cupcake: "cupcake.jpg",
-  bumblebee: "bumblebee.jpg",
-  emereald: "emerald.jpg"
-  // temas sem imagem ficam só com a cor sólida
-};
-
-function applyThemeBackground() {
-  var theme = document.documentElement.getAttribute("data-theme");
-  var file = themeBackgrounds[theme];
-  document.documentElement.style.setProperty(
-    "--lb-theme-bg",
-    file ? 'url("' + assetBaseUrl + 'img/themes/' + file + '")' : "none"
-  );
-}
-
-applyThemeBackground();
-new MutationObserver(applyThemeBackground)
-  .observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-
-  themeChange(false);
-initThemeBackground(assetBaseUrl);
