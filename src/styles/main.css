@@ -183,6 +183,6 @@ body {
   background-attachment: fixed;
 }
 
-[data-theme="cupcake"] body    { background-image: url("/img/themes/cupcake.jpg"); }
-[data-theme="dracula"] body   { background-image: url("/img/themes/dracula.jpg"); }
-[data-theme="synthwave"] body { background-image: url("/img/themes/synthwave.jpg"); }
+[data-theme="cupcake"]   body { background-image: url("public/img/themes/cupcake.jpg"); }
+[data-theme="bumblebee"] body { background-image: url("public/img/themes/bumblebee.jpg"); }
+[data-theme="emerald"]   body { background-image: url("public/img/themes/emerald.jpg"); }
