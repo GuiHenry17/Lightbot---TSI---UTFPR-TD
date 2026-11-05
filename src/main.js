@@ -1,5 +1,6 @@
 // Vite entry point: create the app instance, initialize UI/i18n/history, then start the canvas render loop.
 import "./styles/main.css";
+import { initThemeBackground } from "./lightbot/lightbot.theme.background.js";
 
 // Styles are in place now; reveal the page (see the inline style in index.html).
 document.documentElement.classList.add("lb-ready");
@@ -51,3 +52,4 @@ runWhenDomReady(function () {
     console.error("Lightbot boot failed:", e);
   });
 });
+

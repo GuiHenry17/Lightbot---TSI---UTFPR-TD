@@ -184,3 +184,15 @@
     min-height: 2.5rem;
   }
 }
+body {
+  background-image: var(--lb-theme-bg, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transition: background-image 0.3s;
+}
+
+[data-theme="cupcake"]   body { background-image: url("public/img/themes/cupcake.jpg"); }
+[data-theme="bumblebee"] body { background-image: url("public/img/themes/bumblebee.jpg"); }
+[data-theme="emerald"]   body { background-image: url("public/img/themes/emerald.jpg"); }
