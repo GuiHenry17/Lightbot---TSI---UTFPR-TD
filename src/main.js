@@ -1,5 +1,6 @@
 // Vite entry point: create the app instance, initialize UI/i18n/history, then start the canvas render loop.
 import "./styles/main.css";
+import { initThemeBackground } from "./lightbot/lightbot.theme.background.js";
 
 var assetBaseUrl = import.meta.env.BASE_URL || "/";
 document.documentElement.style.setProperty("--lb-achievement-bg", 'url("' + assetBaseUrl + 'img/achievement.png")');
@@ -50,9 +51,9 @@ runWhenDomReady(function () {
 });
 
 var themeBackgrounds = {
-  dracula: "dracula.jpg",
-  forest: "forest.jpg",
-  synthwave: "synthwave.jpg"
+  cupcake: "cupcake.jpg",
+  bumblebee: "bumblebee.jpg",
+  emereald: "emerald.jpg"
   // temas sem imagem ficam só com a cor sólida
 };
 
@@ -68,3 +69,6 @@ function applyThemeBackground() {
 applyThemeBackground();
 new MutationObserver(applyThemeBackground)
   .observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  themeChange(false);
+initThemeBackground(assetBaseUrl);
