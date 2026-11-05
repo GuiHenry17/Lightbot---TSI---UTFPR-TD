@@ -1,11 +1,3 @@
-// Troca a imagem de fundo da página conforme o tema (data-theme) ativo.
-var THEME_BACKGROUNDS = {
-  forest: "forest.jpg",
-  dracula: "dracula.jpg",
-  synthwave: "synthwave.jpg",
-  // temas que não estiverem aqui ficam só com a cor sólida
-};
-
 export function initThemeBackground(baseUrl) {
   var root = document.documentElement;
   var base = baseUrl || "/";
