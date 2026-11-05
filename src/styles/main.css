@@ -178,10 +178,11 @@
   }
 }
 body {
-  background-image: var(--lb-theme-bg, none);
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   background-attachment: fixed;
-  transition: background-image 0.3s;
 }
+
+[data-theme="cupcake"] body    { background-image: url("/img/themes/cupcake.jpg"); }
+[data-theme="dracula"] body   { background-image: url("/img/themes/dracula.jpg"); }
+[data-theme="synthwave"] body { background-image: url("/img/themes/synthwave.jpg"); }
