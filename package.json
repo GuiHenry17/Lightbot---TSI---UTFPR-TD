@@ -17,15 +17,6 @@
     "lint": "eslint ."
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "@tailwindcss/vite": "^4.3.3",
-    "daisyui": "^5.7.47",
-    "eslint": "10.11.0",
-    "rimraf": "^6.1.2",
-    "tailwindcss": "^4.3.3",
-    "vite": "^8.3.1",
-    "vite-plugin-singlefile": "^0.9.0"
-=======
     "@tailwindcss/vite": "^4.3.4",
     "daisyui": "^5.7.50",
     "eslint": "10.14.0",
@@ -33,7 +24,6 @@
     "tailwindcss": "^4.3.4",
     "vite": "^8.3.5",
     "vite-plugin-singlefile": "^2.3.4"
->>>>>>> 8f26bbe6c449d7d7ea15dd5438df4189a637dcf0
   },
   "repository": {
     "type": "git",

@@ -56,12 +56,6 @@
   --noise: 0;
 }
 
-/*todos os svg dos ícones foram retirados de game-icons.net*/
-
-.lb-instruction-row svg {
-    color: var(--color-base-content);
-}
-
 /* Non-Tailwind assets / legacy helpers kept as small component classes */
 @layer components {
   /* A two-row menu within the existing fixed-size title screen. These
@@ -557,11 +551,6 @@
   .lb-level-tile:is(:hover, :focus-visible) .medal { opacity: 1; }
 
   .lb-level-tile--completed {
-<<<<<<< HEAD
-    outline: 2px solid color-mix(in oklab, var(--color-primary) 60%, transparent);
-    /* Draw the outline on the tile's own edge; a positive offset leaves a gap that reads as a second frame. */
-    outline-offset: -2px;
-=======
     border-color: color-mix(in srgb, var(--color-primary) 45%, var(--color-base-200));
     background: color-mix(in srgb, var(--color-primary) 4%, var(--color-base-200));
   }
@@ -578,7 +567,6 @@
   .lb-level-tile:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 3px;
->>>>>>> 8f26bbe6c449d7d7ea15dd5438df4189a637dcf0
   }
 
   .flip {
@@ -769,34 +757,3 @@
   .game-screen.is-executing .lb-instruction-delete { visibility: hidden; }
   .game-screen :is(button, input, [role="button"]):focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
 }
-body {
-  background-image: var(--lb-theme-bg, none);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  transition: background-image 0.3s;
-}
-
-[data-theme="cupcake"]   body { background-image: url("public/img/themes/cupcake.jpg"); }
-[data-theme="bumblebee"] body { background-image: url("public/img/themes/bumblebee.jpg"); }
-[data-theme="emerald"]   body { background-image: url("public/img/themes/emerald.jpg"); }
-[data-theme="corporate"] body { background-image: url("public/img/themes/corporate.jpg"); }
-[data-theme="synthwave"] body { background-image: url("public/img/themes/synthwave.jpg"); }
-[data-theme="retro"]     body { background-image: url("public/img/themes/retro.jpg"); }
-[data-theme="cyberpunk"] body { background-image: url("public/img/themes/cyberpunk.jpg"); }
-[data-theme="valentine"] body { background-image: url("public/img/themes/valentine.jpg"); }
-[data-theme="halloween"] body { background-image: url("public/img/themes/halloween.jpg"); }
-[data-theme="garden"]    body { background-image: url("public/img/themes/garden.jpg"); }
-[data-theme="forest"]    body { background-image: url("public/img/themes/forest.jpg"); }
-[data-theme="aqua"]      body { background-image: url("public/img/themes/aqua.jpg"); }
-[data-theme="lofi"]      body { background-image: url("public/img/themes/lofi.jpg"); }
-[data-theme="pastel"]    body { background-image: url("public/img/themes/pastel.jpg"); }
-[data-theme="fantasy"]   body { background-image: url("public/img/themes/fantasy.jpg"); }
-[data-theme="wireframe"] body { background-image: url("public/img/themes/wireframe.jpg"); }
-[data-theme="black"]     body { background-image: url("public/img/themes/black.jpg"); }
-[data-theme="luxury"]    body { background-image: url("public/img/themes/luxury.jpg"); }
-[data-theme="dracula"]   body { background-image: url("public/img/themes/dracula.jpg"); }
-[data-theme="coffee"]    body { background-image: url("public/img/themes/coffee.jpg"); }
-[data-theme="winter"]    body { background-image: url("public/img/themes/winter.jpg"); }
-[data-theme="cmyk"]       body { background-image: url("public/img/themes/cmyk.jpg"); }
