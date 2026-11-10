@@ -82,10 +82,14 @@ If you prefer to build the game yourself (or modify the code):
 
 2. **Install dependencies**
 
-   Make sure you have [Node.js](https://nodejs.org/) installed, then run:
+   Install [Node.js](https://nodejs.org/) 26.12.1 or a newer 26.x release
+   and npm 11.19.0. The version in `.nvmrc` is also used by CI and release builds.
+   With nvm-windows, run `nvm install 26.12.1` and `nvm use 26.12.1`;
+   with nvm on macOS/Linux, run `nvm install` and `nvm use`.
+   Check `node --version`, then run:
 
    ```bash
-   npm install
+   npm ci
    ```
 
 3. **Start the dev server**

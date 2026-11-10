@@ -5,6 +5,8 @@ export const LIGHTBOT_TRANSLATIONS_EN = {
     "stop": "Stop"
   },
   "welcomeScreen": {
+    "sound": "Sound",
+    "theme": "Theme",
     "start": "Start Game",
     "toggleAudio": "Toggle Audio",
     "help": "Help",
@@ -12,10 +14,20 @@ export const LIGHTBOT_TRANSLATIONS_EN = {
     "language": "Language"
   },
   "levelSelectScreen": {
+    "progress": "Completed: {{completed}} / {{total}}",
+    "level": "Level {{number}}",
+    "incomplete": "Incomplete",
+    "completed": "Completed",
+    "bronze": "Bronze",
+    "silver": "Silver",
+    "gold": "Gold",
     "title": "Level select",
     "mainMenu": "Main Menu"
   },
   "achievementsScreen": {
+    "progress": "Achievements unlocked",
+    "unlocked": "Unlocked",
+    "locked": "Locked",
     "title": "Achievements",
     "mainMenu": "Main Menu"
   },
@@ -54,6 +66,20 @@ export const LIGHTBOT_TRANSLATIONS_EN = {
     }
   },
   "helpScreen": {
+    "title": "How to play",
+    "topicsTitle": "Topics",
+    "topics": {
+      "goal": "Goal of the game",
+      "howTo": "Build a program",
+      "objects": "Game objects",
+      "walkForward": "Walk forward",
+      "turnRight": "Turn right",
+      "turnLeft": "Turn left",
+      "jump": "Jump",
+      "light": "Light",
+      "repeat": "Repeat",
+      "medals": "Medals"
+    },
     "mainMenu": "Main Menu",
     "goal": {
       "title": "Goal of the game",
@@ -61,7 +87,7 @@ export const LIGHTBOT_TRANSLATIONS_EN = {
     },
     "howTo": {
       "title": "How to play the game",
-      "content": "You can create a program by dragging instructions from the instruction list and dropping them into the program frame. The instructions will automatically be added to the bottom of the highlighted block.\nExecute your program by clicking the Run button. If you are not satisfied with your current program, you can interrupt the execution at any moment by clicking the Stop button. This will reset the robot to his initial position."
+      "content": "Click an instruction to add it to the end of your program, or drag it to the desired position, including inside a Repeat block. Drag instructions to rearrange them.\nClick Run to execute your program. The same button changes to Pause, then Resume, so you can pause and continue without losing your place. Use the separate Reset button to return the robot and lights to their starting state and edit your program. Reset keeps your instructions. When execution finishes, Run again restarts your program from the beginning."
     },
     "objects": {
       "title": "Game objects",
@@ -100,6 +126,24 @@ export const LIGHTBOT_TRANSLATIONS_EN = {
     }
   },
   "gameScreen": {
+    "decreaseRepeat": "Decrease repeat count",
+    "increaseRepeat": "Increase repeat count",
+    "status": { "running": "Running…", "paused": "Paused", "finished": "Finished" },
+    "pause": "Pause",
+    "resume": "Resume",
+    "runAgain": "Run again",
+    "paused": "Paused · Reset to edit",
+    "addHint": "Click to add · Drag to arrange",
+    "ready": "Ready to run",
+    "running": "Running…",
+    "finished": "Program ended · Reset to edit",
+    "reset": "Reset",
+    "remove": "Remove instruction",
+    "commands": {
+      "walk": "Forward",
+      "turnRight": "Right",
+      "turnLeft": "Left"
+    },
     "back": "Back",
     "toggleAudio": "Toggle Audio",
     "clear": "Clear",

@@ -5,6 +5,8 @@ export const LIGHTBOT_TRANSLATIONS_FR = {
     "stop": "Arrêter"
   },
   "welcomeScreen": {
+    "sound": "Son",
+    "theme": "Thème",
     "start": "Démarrer le jeu",
     "toggleAudio": "Activer/Désactiver l'audio",
     "help": "Aide",
@@ -12,10 +14,20 @@ export const LIGHTBOT_TRANSLATIONS_FR = {
     "language": "Langue"
   },
   "levelSelectScreen": {
+    "progress": "Terminés : {{completed}} / {{total}}",
+    "level": "Niveau {{number}}",
+    "incomplete": "À terminer",
+    "completed": "Terminé",
+    "bronze": "Bronze",
+    "silver": "Argent",
+    "gold": "Or",
     "title": "Sélection du niveau",
     "mainMenu": "Menu principal"
   },
   "achievementsScreen": {
+    "progress": "Succès débloqués",
+    "unlocked": "Débloqué",
+    "locked": "Verrouillé",
     "title": "Succès",
     "mainMenu": "Menu principal"
   },
@@ -54,6 +66,20 @@ export const LIGHTBOT_TRANSLATIONS_FR = {
     }
   },
   "helpScreen": {
+    "title": "Comment jouer",
+    "topicsTitle": "Rubriques",
+    "topics": {
+      "goal": "But du jeu",
+      "howTo": "Créer un programme",
+      "objects": "Objets du jeu",
+      "walkForward": "Avancer",
+      "turnRight": "Tourner à droite",
+      "turnLeft": "Tourner à gauche",
+      "jump": "Sauter",
+      "light": "Éclairer",
+      "repeat": "Répéter",
+      "medals": "Médailles"
+    },
     "mainMenu": "Menu principal",
     "goal": {
       "title": "But du jeu",
@@ -61,7 +87,7 @@ export const LIGHTBOT_TRANSLATIONS_FR = {
     },
     "howTo": {
       "title": "Comment jouer",
-      "content": "Vous pouvez créer un programme en faisant glisser des instructions depuis la liste et en les déposant dans le cadre du programme. Les instructions seront automatiquement ajoutées en bas du bloc en surbrillance.\nExécutez votre programme en cliquant sur le bouton Exécuter. Si vous n'êtes pas satisfait de votre programme actuel, vous pouvez interrompre l'exécution à tout moment en cliquant sur le bouton Arrêter. Cela réinitialisera le robot à sa position initiale."
+      "content": "Cliquez sur une instruction pour l’ajouter à la fin du programme, ou faites-la glisser à l’endroit souhaité, y compris dans un bloc Répéter. Faites glisser les instructions pour changer leur ordre.\nCliquez sur Exécuter pour lancer le programme. Le même bouton devient Pause, puis Reprendre, pour suspendre et reprendre l’exécution au même endroit. Le bouton séparé Réinitialiser remet le robot et les lumières dans leur état initial et permet de modifier le programme. Vos instructions sont conservées. À la fin de l’exécution, Relancer redémarre le programme depuis le début."
     },
     "objects": {
       "title": "Objets du jeu",
@@ -100,6 +126,24 @@ export const LIGHTBOT_TRANSLATIONS_FR = {
     }
   },
   "gameScreen": {
+    "decreaseRepeat": "Diminuer le nombre de répétitions",
+    "increaseRepeat": "Augmenter le nombre de répétitions",
+    "status": { "running": "En cours…", "paused": "En pause", "finished": "Terminé" },
+    "pause": "Pause",
+    "resume": "Reprendre",
+    "runAgain": "Relancer",
+    "paused": "En pause · Réinitialiser pour modifier",
+    "addHint": "Cliquer pour ajouter · Glisser pour déplacer",
+    "ready": "Prêt à démarrer",
+    "running": "Exécution…",
+    "finished": "Programme terminé · Réinitialiser pour modifier",
+    "reset": "Réinitialiser",
+    "remove": "Supprimer l’instruction",
+    "commands": {
+      "walk": "Avancer",
+      "turnRight": "Droite",
+      "turnLeft": "Gauche"
+    },
     "back": "Retour",
     "toggleAudio": "Activer/Désactiver l'audio",
     "clear": "Effacer",

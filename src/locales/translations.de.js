@@ -5,6 +5,8 @@ export const LIGHTBOT_TRANSLATIONS_DE = {
     "stop": "Stopp"
   },
   "welcomeScreen": {
+    "sound": "Ton",
+    "theme": "Design",
     "start": "Spiel starten",
     "toggleAudio": "Audio umschalten",
     "help": "Hilfe",
@@ -12,10 +14,20 @@ export const LIGHTBOT_TRANSLATIONS_DE = {
     "language": "Sprache"
   },
   "levelSelectScreen": {
+    "progress": "Abgeschlossen: {{completed}} / {{total}}",
+    "level": "Level {{number}}",
+    "incomplete": "Offen",
+    "completed": "Abgeschlossen",
+    "bronze": "Bronze",
+    "silver": "Silber",
+    "gold": "Gold",
     "title": "Levelauswahl",
     "mainMenu": "Hauptmenü"
   },
   "achievementsScreen": {
+    "progress": "Erfolge freigeschaltet",
+    "unlocked": "Freigeschaltet",
+    "locked": "Gesperrt",
     "title": "Erfolge",
     "mainMenu": "Hauptmenü"
   },
@@ -54,6 +66,20 @@ export const LIGHTBOT_TRANSLATIONS_DE = {
     }
   },
   "helpScreen": {
+    "title": "Spielanleitung",
+    "topicsTitle": "Themen",
+    "topics": {
+      "goal": "Spielziel",
+      "howTo": "Programm erstellen",
+      "objects": "Spielobjekte",
+      "walkForward": "Vorwärts gehen",
+      "turnRight": "Rechts drehen",
+      "turnLeft": "Links drehen",
+      "jump": "Springen",
+      "light": "Licht",
+      "repeat": "Wiederholen",
+      "medals": "Medaillen"
+    },
     "mainMenu": "Hauptmenü",
     "goal": {
       "title": "Ziel des Spiels",
@@ -61,7 +87,7 @@ export const LIGHTBOT_TRANSLATIONS_DE = {
     },
     "howTo": {
       "title": "So spielst du",
-      "content": "Du kannst ein Programm erstellen, indem du Anweisungen aus der Anweisungsliste ziehst und in den Programmrahmen ablegst. Die Anweisungen werden automatisch am unteren Ende des markierten Blocks hinzugefügt.\nFühre dein Programm aus, indem du auf die Schaltfläche Start klickst. Wenn du mit deinem aktuellen Programm nicht zufrieden bist, kannst du die Ausführung jederzeit durch Klicken auf die Stopp-Schaltfläche unterbrechen. Dadurch wird der Roboter auf seine Ausgangsposition zurückgesetzt."
+      "content": "Klicke auf eine Anweisung, um sie am Ende deines Programms hinzuzufügen, oder ziehe sie an die gewünschte Stelle, auch in einen Wiederholungsblock. Ziehe Anweisungen, um ihre Reihenfolge zu ändern.\nKlicke auf Start, um dein Programm auszuführen. Dieselbe Schaltfläche wechselt zu Pause und dann zu Fortsetzen. So kannst du die Ausführung unterbrechen und an derselben Stelle fortsetzen. Mit der separaten Schaltfläche Zurücksetzen setzt du den Roboter und die Lichter in den Ausgangszustand zurück und kannst dein Programm bearbeiten. Deine Anweisungen bleiben erhalten. Nach dem Ende der Ausführung startet Neu starten dein Programm von vorn."
     },
     "objects": {
       "title": "Spielobjekte",
@@ -100,6 +126,24 @@ export const LIGHTBOT_TRANSLATIONS_DE = {
     }
   },
   "gameScreen": {
+    "decreaseRepeat": "Wiederholungszahl verringern",
+    "increaseRepeat": "Wiederholungszahl erhöhen",
+    "status": { "running": "Läuft…", "paused": "Pausiert", "finished": "Beendet" },
+    "pause": "Pause",
+    "resume": "Fortsetzen",
+    "runAgain": "Neu starten",
+    "paused": "Pausiert · Zurücksetzen zum Bearbeiten",
+    "addHint": "Klicken zum Hinzufügen · Ziehen zum Ordnen",
+    "ready": "Bereit zum Start",
+    "running": "Programm läuft…",
+    "finished": "Programm beendet · Zurücksetzen zum Bearbeiten",
+    "reset": "Zurücksetzen",
+    "remove": "Anweisung entfernen",
+    "commands": {
+      "walk": "Vorwärts",
+      "turnRight": "Rechts",
+      "turnLeft": "Links"
+    },
     "back": "Zurück",
     "toggleAudio": "Audio umschalten",
     "clear": "Leeren",

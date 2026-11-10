@@ -108,6 +108,9 @@ export function createMedia() {
       this._setAudio("game");
       this._tryPlayAudio();
     },
+    pauseVideo: function () {
+      if (this.videoEl) this.videoEl.pause();
+    },
     playVideo: function(x) {
       if (!this.videoEl) return;
       var item = this.video[x];
