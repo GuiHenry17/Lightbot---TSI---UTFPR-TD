@@ -411,11 +411,6 @@ export function createUi(params) {
         });
       }
 
-<<<<<<< HEAD
-      // Both the toolbar trash icon and the "Clear all" button in the program card empty the program.
-      document.querySelectorAll("#clearButton, .clearProgramButton").forEach(function (el) {
-        el.addEventListener("click", function () {
-=======
       var resetButton = document.getElementById("resetButton");
       if (resetButton) {
         resetButton.addEventListener("click", function () {
@@ -429,13 +424,12 @@ export function createUi(params) {
       if (clearButton) {
         clearButton.addEventListener("click", function () {
           if (bot.isInExecutionMode()) return;
->>>>>>> 8f26bbe6c449d7d7ea15dd5438df4189a637dcf0
           // wipe the program and persist the empty state.
           var list = document.querySelector("#programContainer ul");
           if (list) list.textContent = "";
           editor.saveProgram();
         });
-      });
+      }
 
       // Native radio controls support both clicking and arrow-key topic selection.
       var helpTopics = document.getElementById("helpTopics");
