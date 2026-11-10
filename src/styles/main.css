@@ -57,7 +57,6 @@
   --noise: 1; 
 }
 
-/* Animações Globais */
 @keyframes ouro-brilhante {
   0%, 100% { filter: drop-shadow(0 0 2px rgba(229, 151, 0, 0.4)); }
   50% { filter: drop-shadow(0 0 8px rgba(229, 151, 0, 0.9)) brightness(1.2); }
