@@ -20,7 +20,7 @@ introductory courses on algorithms, control flow, and problem decomposition.
 - Novos comandos
 - Novas fases (grupos de fases)
 - Documentação do código (para turmas futuras)
-- Melhorar os temas -> Atribuído ao dev Felipe Garcia
+- Melhorar os temas -> Atribuído ao dev Felipe Garcia - Feito✅
 - Novos personages
 - Novas sons
 
