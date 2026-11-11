@@ -29,15 +29,11 @@ export function canvasView(app, canvas) {
       var oldPos = Object.assign({}, lightBot.bot.currentPos); // copy old position
       var instruction = lightBot.bot.executeNextInstruction();
       var newPos = lightBot.bot.currentPos; // get the new position
-<<<<<<< HEAD
-      lightBot.bot.animate(instruction, oldPos, newPos);
-      playInstructionSfx(instruction, oldPos, newPos);
-=======
       if (instruction) {
         lightBot.bot.animate(instruction, oldPos, newPos);
+        playInstructionSfx(instruction, oldPos, newPos);
         lightBot.ui.onInstruction(instruction);
       }
->>>>>>> 8f26bbe6c449d7d7ea15dd5438df4189a637dcf0
     }
     // check if map has been completed here
     if (lightBot.map.ready() && lightBot.map.state.allLightsOn()) {

@@ -4,14 +4,10 @@ import { LIGHTBOT_TRANSLATIONS_DE } from "../locales/translations.de.js";
 import { LIGHTBOT_TRANSLATIONS_EN } from "../locales/translations.en.js";
 import { LIGHTBOT_TRANSLATIONS_ES } from "../locales/translations.es.js";
 import { LIGHTBOT_TRANSLATIONS_FR } from "../locales/translations.fr.js";
-<<<<<<< HEAD
 import { LIGHTBOT_TRANSLATIONS_JP } from "../locales/translations.jp.js";
 import { LIGHTBOT_TRANSLATIONS_PT_BR } from "../locales/translations.pt.js";
-
-=======
 import { LIGHTBOT_TRANSLATIONS_SRB_LAT } from "../locales/translations.srb_lat.js";
 import { LIGHTBOT_TRANSLATIONS_SRB_CIR } from "../locales/translations.srb_cir.js";
->>>>>>> 8f26bbe6c449d7d7ea15dd5438df4189a637dcf0
 
 var LANGUAGE_STORAGE_KEY = "lightbot_language";
 var FALLBACK_LANGUAGE = "en";
@@ -28,19 +24,17 @@ var TRANSLATION_RESOURCES = {
   fr: {
     translation: LIGHTBOT_TRANSLATIONS_FR,
   },
-<<<<<<< HEAD
   jp: { 
     translation: LIGHTBOT_TRANSLATIONS_JP
   },
   pt_br: { 
     translation: LIGHTBOT_TRANSLATIONS_PT_BR
-=======
+  },
   "sr-Latn": {
     translation: LIGHTBOT_TRANSLATIONS_SRB_LAT,
   },
   "sr-Cyrl": {
     translation: LIGHTBOT_TRANSLATIONS_SRB_CIR,
->>>>>>> 8f26bbe6c449d7d7ea15dd5438df4189a637dcf0
   },
 };
 
@@ -66,19 +60,23 @@ var LANGUAGE_ALIASES = {
 
 function resolveLanguage(language) {
   if (!language) return null;
-<<<<<<< HEAD
-  // normalize "en-US" to "en" when we only have base language keys.
-  var normalized = String(language).toLowerCase().replace("_", "-");
-  var key = normalized.replace("-", "_");
-  if (TRANSLATION_RESOURCES[key]) return key;
+  var aliases = { srb_lat: "sr-Latn", srb_cir: "sr-Cyrl" };
+  var normalized = String(language).trim().toLowerCase().replace("_", "-");
+  if (aliases[normalized] && TRANSLATION_RESOURCES[aliases[normalized]]) return aliases[normalized];
   if (LANGUAGE_ALIASES[normalized]) return LANGUAGE_ALIASES[normalized];
-  var shortCode = normalized.split("-")[0];
-  if (TRANSLATION_RESOURCES[shortCode]) return shortCode;
-  if (LANGUAGE_ALIASES[shortCode]) return LANGUAGE_ALIASES[shortCode];
+  try {
+    var locale = new Intl.Locale(normalized);
+    var languageAndScript = locale.language + (locale.script ? "-" + locale.script : "");
+    if (TRANSLATION_RESOURCES[languageAndScript]) return languageAndScript;
+    if (locale.language === "sr" && !locale.script && TRANSLATION_RESOURCES["sr-Cyrl"]) return "sr-Cyrl";
+    if (TRANSLATION_RESOURCES[locale.language]) return locale.language;
+    if (LANGUAGE_ALIASES[locale.language]) return LANGUAGE_ALIASES[locale.language];
+  } catch (e) {
+    return null;
+  }
   return null;
 }
 
-// First visit: pick the first browser language we have a translation for.
 function detectBrowserLanguage() {
   var candidates = [];
   if (typeof navigator !== "undefined") {
@@ -88,21 +86,6 @@ function detectBrowserLanguage() {
   for (var i = 0; i < candidates.length; i++) {
     var resolved = resolveLanguage(candidates[i]);
     if (resolved) return resolved;
-=======
-  // Retain saved selections from the original Serbian contributions.
-  var aliases = { srb_lat: "sr-Latn", srb_cir: "sr-Cyrl" };
-  var normalized = String(language).trim().toLowerCase();
-  if (aliases[normalized] && TRANSLATION_RESOURCES[aliases[normalized]]) return aliases[normalized];
-  try {
-    // Preserve the script when normalizing regional tags such as sr-Latn-RS.
-    var locale = new Intl.Locale(normalized);
-    var languageAndScript = locale.language + (locale.script ? "-" + locale.script : "");
-    if (TRANSLATION_RESOURCES[languageAndScript]) return languageAndScript;
-    if (locale.language === "sr" && !locale.script && TRANSLATION_RESOURCES["sr-Cyrl"]) return "sr-Cyrl";
-    if (TRANSLATION_RESOURCES[locale.language]) return locale.language;
-  } catch (e) {
-    // Invalid stored language tags use the normal fallback language.
->>>>>>> 8f26bbe6c449d7d7ea15dd5438df4189a637dcf0
   }
   return null;
 }
