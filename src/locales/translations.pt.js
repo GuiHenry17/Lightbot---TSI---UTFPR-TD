@@ -5,6 +5,8 @@ export const LIGHTBOT_TRANSLATIONS_PT_BR = {
     "stop": "Parar"
   },
   "welcomeScreen": {
+    "sound": "Som",
+    "theme": "Tema",
     "start": "Iniciar Jogo",
     "toggleAudio": "Alternar Áudio",
     "help": "Ajuda",
@@ -12,10 +14,20 @@ export const LIGHTBOT_TRANSLATIONS_PT_BR = {
     "language": "Idioma"
   },
   "levelSelectScreen": {
+    "progress": "Concluídas: {{completed}} / {{total}}",
+    "level": "Fase {{number}}",
+    "incomplete": "Incompleta",
+    "completed": "Concluída",
+    "bronze": "Bronze",
+    "silver": "Prata",
+    "gold": "Ouro",
     "title": "Selecionar fase",
     "mainMenu": "Menu Principal"
   },
   "achievementsScreen": {
+    "progress": "Conquistas desbloqueadas",
+    "unlocked": "Desbloqueada",
+    "locked": "Bloqueada",
     "title": "Conquistas",
     "mainMenu": "Menu Principal"
   },
@@ -54,6 +66,20 @@ export const LIGHTBOT_TRANSLATIONS_PT_BR = {
     }
   },
   "helpScreen": {
+    "title": "Como jogar",
+    "topicsTitle": "Tópicos",
+    "topics": {
+      "goal": "Objetivo do jogo",
+      "howTo": "Monte um programa",
+      "objects": "Objetos do jogo",
+      "walkForward": "Avançar",
+      "turnRight": "Virar à direita",
+      "turnLeft": "Virar à esquerda",
+      "jump": "Pular",
+      "light": "Luz",
+      "repeat": "Repetir",
+      "medals": "Medalhas"
+    },
     "mainMenu": "Menu Principal",
     "goal": {
       "title": "Objetivo do jogo",
@@ -100,6 +126,24 @@ export const LIGHTBOT_TRANSLATIONS_PT_BR = {
     }
   },
   "gameScreen": {
+    "decreaseRepeat": "Diminuir repetições",
+    "increaseRepeat": "Aumentar repetições",
+    "status": { "running": "Executando…", "paused": "Pausado", "finished": "Finalizado" },
+    "pause": "Pausar",
+    "resume": "Continuar",
+    "runAgain": "Executar de novo",
+    "paused": "Pausado · Reinicie para editar",
+    "addHint": "Clique para adicionar · Arraste para organizar",
+    "ready": "Pronto para executar",
+    "running": "Executando…",
+    "finished": "Programa encerrado · Reinicie para editar",
+    "reset": "Reiniciar",
+    "remove": "Remover instrução",
+    "commands": {
+      "walk": "Frente",
+      "turnRight": "Direita",
+      "turnLeft": "Esquerda"
+    },
     "back": "Voltar",
     "toggleAudio": "Alternar Áudio",
     "clear": "Limpar",
